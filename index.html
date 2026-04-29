@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura Concept | Beauty and Health Clinic</title>
+    <meta name="description" content="Aura Concept Beauty and Health Clinic. Realçando sua beleza com saúde, tecnologia e cuidado especializado em estética facial, corporal e bem-estar.">
+    
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'aura-pink': '#F8E8E8', // Rosa claro principal
+                        'aura-pink-dark': '#E6C8C8', // Rosa para hover
+                        'aura-yellow': '#FCF9E8', // Amarelo suave
+                        'aura-neutral': '#F5F5F5', // Cinza/Bege claro
+                        'aura-text': '#4A4A4A', // Texto principal
+                        'aura-heading': '#2D2D2D' // Títulos
+                    },
+                    fontFamily: {
+                        sans: ['Montserrat', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Animações de Scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+
+        /* Banner Hero Overlay */
+        .hero-bg {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(248, 232, 232, 0.8)), url('imagens/ImagemFundo.webp');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        /* Imagem "Antes e Depois" Slider Simples */
+        .ba-container { position: relative; overflow: hidden; }
+        .ba-container img { width: 100%; display: block; }
+        
+        /* Botão WhatsApp Flutuante */
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+    </style>
+</head>
+
+<body class="bg-white text-aura-text font-sans antialiased">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="flex items-center gap-2 group">
+                    <img src="imagens/icone.webp" alt="Aura Concept Logo" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                    <img src="imagens/marca.webp" alt="Aura Concept Logo" class="h-10 md:h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                </a>
+                
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#home" class="text-aura-text hover:text-aura-pink-dark transition-colors">Início</a>
+                    <a href="#sobre" class="text-aura-text hover:text-aura-pink-dark transition-colors">Sobre Nós</a>
+                    <a href="#procedimentos" class="text-aura-text hover:text-aura-pink-dark transition-colors">Procedimentos</a>
+                    <a href="#galeria" class="text-aura-text hover:text-aura-pink-dark transition-colors">Galeria</a>
+                    <a href="#contato" class="text-aura-text hover:text-aura-pink-dark transition-colors">Contato</a>
+                    <a href="#agendamento" class="bg-aura-pink-dark text-white px-5 py-2 rounded-full hover:bg-opacity-80 transition-all shadow-md">Agendar</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-aura-text hover:text-aura-pink-dark focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 text-center">
+                <a href="#home" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Início</a>
+                <a href="#sobre" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Sobre Nós</a>
+                <a href="#procedimentos" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Procedimentos</a>
+                <a href="#contato" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero-bg h-screen flex items-center justify-center pt-20">
+        <div class="text-center px-4 max-w-4xl fade-in-section">
+            <span class="text-sm uppercase tracking-[0.3em] text-aura-heading mb-4 block font-medium">Clínica de Estética e Saúde</span>
+            <h1 class="font-serif text-4xl md:text-6xl text-aura-heading leading-tight mb-6">
+                Realçando sua beleza com <br><span class="italic text-aura-pink-dark">saúde, tecnologia e cuidado.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-aura-text mb-10 max-w-2xl mx-auto font-light">
+                Descubra sua melhor versão em um ambiente projetado para o seu bem-estar, com tratamentos personalizados e tecnologia de ponta.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#agendamento" class="bg-aura-pink-dark text-white px-8 py-4 rounded-full hover:bg-[#D5B4B4] transition-all shadow-lg text-lg font-medium">
+                    Agende sua Avaliação
+                </a>
+                <a href="#procedimentos" class="bg-white text-aura-heading px-8 py-4 rounded-full hover:bg-gray-50 transition-all shadow-md text-lg border border-gray-100">
+                    Nossos Serviços
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-aura-yellow py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center fade-in-section">
+                <div class="p-4">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-aura-pink-dark text-2xl">
+                        <i class="fas fa-microchip"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-aura-heading">Tecnologia Avançada</h3>
+                    <p class="text-sm text-gray-600">Equipamentos de última geração para resultados precisos e seguros.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-aura-pink-dark text-2xl">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-aura-heading">Atendimento Personalizado</h3>
+                    <p class="text-sm text-gray-600">Protocolos exclusivos desenhados para as suas necessidades únicas.</p>
+                </div>
+                <div class="p-4">
+                    <div class="w-16 h-16 mx-auto bg-white rounded-full flex items-center justify-center shadow-sm mb-4 text-aura-pink-dark text-2xl">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <h3 class="font-serif text-xl mb-2 text-aura-heading">Equipe Qualificada</h3>
+                    <p class="text-sm text-gray-600">Profissionais altamente treinados e focados na sua saúde e estética.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="text-center py-8">
+    <button onclick="openQuiz()" class="bg-aura-heading text-white px-10 py-5 rounded-full hover:scale-105 transition-all shadow-xl font-medium flex items-center gap-3 mx-auto">
+        <i class="fas fa-magic"></i> Descobrir meu Protocolo Ideal
+    </button>
+</div>
+    <section id="sobre" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center gap-16 fade-in-section">
+                <div class="w-full md:w-1/2 relative">
+                    <div class="absolute inset-0 bg-aura-pink rounded-tl-[100px] rounded-br-[100px] transform translate-x-4 translate-y-4 -z-10"></div>
+                    <img src="imagens/Procedimento.webp" alt="Interior da Clínica" class="rounded-tl-[100px] rounded-br-[100px] shadow-xl object-cover h-[500px] w-full">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-6">A Essência da <span class="italic text-aura-pink-dark">Aura Concept</span></h2>
+                    <p class="mb-4 text-gray-600 leading-relaxed font-light">
+                        Fundada com a missão de democratizar a beleza saudável e o bem-estar, a Aura Concept é mais que uma clínica de estética. Somos um espaço dedicado ao autocuidado, onde luxo acessível e acolhimento se encontram.
+                    </p>
+                    <p class="mb-8 text-gray-600 leading-relaxed font-light">
+                        Nossa visão é ser referência em resultados naturais e duradouros, sempre priorizando a autoestima e a confiança de nossos pacientes através de protocolos cientificamente comprovados.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-check text-aura-pink-dark"></i>
+                            <span class="text-aura-heading font-medium">Credibilidade e Confiança</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-check text-aura-pink-dark"></i>
+                            <span class="text-aura-heading font-medium">Ambiente Acolhedor e Sofisticado</span>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <i class="fas fa-check text-aura-pink-dark"></i>
+                            <span class="text-aura-heading font-medium">Foco em Resultados Naturais</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="procedimentos" class="py-24 bg-aura-neutral">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
+                <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-4">Nossos Tratamentos</h2>
+                <p class="text-gray-600 font-light">Descubra as soluções perfeitas para realçar sua beleza natural e promover seu bem-estar completo.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-section">
+                
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="imagens/Tratamento.webp" alt="Estética Facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-aura-heading">Facial</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-3">Harmonização e Cuidado</h3>
+                        <p class="text-sm text-gray-600 mb-4 h-20 line-clamp-3">Tratamentos voltados para rejuvenescimento, hidratação profunda e simetria. Indicado para prevenção de linhas de expressão, manchas e flacidez.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Botox e Preenchimento</li>
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Limpeza de Pele Profunda</li>
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Peeling Químico</li>
+                        </ul>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 30-60 min</span>
+                            <a href="#agendamento" class="text-aura-pink-dark text-sm font-medium hover:underline">Saber mais &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="imagens/Oleo.webp" alt="Estética Corporal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-aura-heading">Corporal</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-3">Contorno e Firmeza</h3>
+                        <p class="text-sm text-gray-600 mb-4 h-20 line-clamp-3">Protocolos avançados para redução de medidas, celulite e flacidez. Recupere o contorno corporal com tecnologias não-invasivas.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Drenagem Linfática</li>
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Radiofrequência</li>
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Criolipólise</li>
+                        </ul>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 45-90 min</span>
+                            <a href="#agendamento" class="text-aura-pink-dark text-sm font-medium hover:underline">Saber mais &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="imagens/Aesthetic.webp" alt="Saúde e Bem-estar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-aura-heading">Spa & Saúde</div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-3">Relaxamento Total</h3>
+                        <p class="text-sm text-gray-600 mb-4 h-20 line-clamp-3">Desconecte-se da rotina. Nossas terapias de relaxamento aliviam tensões musculares, estresse e promovem o equilíbrio corpo-mente.</p>
+                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Massagem Relaxante</li>
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Spa Day Aura</li>
+                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Terapias Holísticas</li>
+                        </ul>
+                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
+                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 60-120 min</span>
+                            <a href="#agendamento" class="text-aura-pink-dark text-sm font-medium hover:underline">Saber mais &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 bg-aura-pink">
+        <div class="max-w-7xl mx-auto px-4 text-center fade-in-section">
+            <h2 class="font-serif text-2xl md:text-3xl text-aura-heading mb-4">Mês do Autocuidado</h2>
+            <p class="text-aura-text mb-6">Aproveite nossos pacotes especiais desenvolvidos para uma transformação completa.</p>
+            <div class="inline-block bg-white px-8 py-4 rounded-xl shadow-md border-l-4 border-aura-pink-dark">
+                <h4 class="font-bold text-aura-heading">Pacote "Aura Glow"</h4>
+                <p class="text-sm text-gray-600 mt-1">Limpeza de Pele + Peeling + Máscara de Ouro com 20% OFF.</p>
+                <a href="#agendamento" class="inline-block mt-3 text-sm font-semibold text-aura-pink-dark hover:text-aura-heading transition-colors">Garantir Oferta &rarr;</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
+                <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-4">Nossa Estrutura e Resultados</h2>
+                <p class="text-gray-600 font-light">Um vislumbre do nosso ambiente planejado para o seu conforto.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-16 fade-in-section">
+                <img src="imagens/SalaEspera.webp" alt="Clínica" class="w-full h-48 object-cover rounded-lg shadow-sm hover:opacity-80 transition cursor-pointer">
+                <img src="imagens/Clinica.webp" alt="Equipamentos" class="w-full h-48 object-cover rounded-lg shadow-sm hover:opacity-80 transition cursor-pointer">
+                <img src="imagens/Massagem.webp" alt="Recepção" class="w-full h-48 object-cover rounded-lg shadow-sm hover:opacity-80 transition cursor-pointer">
+                <img src="imagens/Produtos.webp" alt="Produtos de Cuidado" class="w-full h-48 object-cover rounded-lg shadow-sm hover:opacity-80 transition cursor-pointer">
+            </div>
+
+            <div class="bg-aura-neutral rounded-3xl p-8 md:p-12 fade-in-section">
+                <div class="flex flex-col md:flex-row items-center gap-12">
+                    <div class="w-full md:w-1/3">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-4">Resultados Reais</h3>
+                        
+                        <p class="text-gray-600 font-light mb-6">Trabalhamos para realçar o que há de melhor em você. Arraste para ver a evolução do tratamento de harmonização facial (Ilustração).</p>
+                    </div>
+                    <div class="w-full md:w-2/3 bg-white rounded-2xl overflow-hidden shadow-2xl relative select-none touch-none h-[400px]" id="before-after-slider">
+    
+                        <div class="absolute inset-0">
+                            <img src="imagens/Depois.webp" 
+                                class="absolute inset-0 w-full h-full object-cover" alt="Depois">
+                            <div class="absolute bottom-4 right-4 bg-aura-pink-dark text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow-md z-10">
+                                Depois
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-0 overflow-hidden w-1/2 border-r border-white/50" id="before-image-wrapper">
+                            <img src="imagens/Antes.webp" 
+                                class="absolute inset-0 h-full object-cover filter grayscale" alt="Antes" id="before-img">
+                            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm z-10">
+                                Antes
+                            </div>
+                        </div>
+
+                        <div class="absolute inset-y-0 left-1/2 w-1 bg-white cursor-ew-resize z-20 group" id="slider-handle">
+                            <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-aura-pink-dark group-hover:scale-110 transition-transform">
+                                <i class="fas fa-arrows-left-right"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <style>
+                        #before-after-slider {
+                            position: relative;
+                        }
+                        #before-image-wrapper {
+                            width: 50%; /* Posição inicial */
+                            border-right: 1px solid white;
+                        }
+                        /* Impedir que as imagens sejam arrastadas como arquivos */
+                        #before-after-slider img {
+                            pointer-events: none;
+                            user-select: none;
+                        }
+                    </style>
+
+                    <script>
+                        const slider = document.getElementById('before-after-slider');
+                        const wrapper = document.getElementById('before-image-wrapper');
+                        const handle = document.getElementById('slider-handle');
+                        const beforeImg = document.getElementById('before-img');
+
+                        if (slider && beforeImg) {
+                            // Função para manter a imagem do antes com o tamanho real do slider
+                            const syncImageSize = () => {
+                                beforeImg.style.width = slider.offsetWidth + 'px';
+                                beforeImg.style.maxWidth = 'none'; // Impede o Tailwind de limitar a largura
+                            };
+
+                            const moveSlider = (e) => {
+                                const rect = slider.getBoundingClientRect();
+                                let x = (e.pageX || (e.touches && e.touches[0].pageX)) - rect.left;
+                                
+                                if (x < 0) x = 0;
+                                if (x > rect.width) x = rect.width;
+
+                                const percent = (x / rect.width) * 100;
+                                wrapper.style.width = percent + '%';
+                                handle.style.left = percent + '%';
+                            };
+
+                            // Eventos
+                            slider.addEventListener('mousedown', () => {
+                                window.addEventListener('mousemove', moveSlider);
+                            });
+                            window.addEventListener('mouseup', () => {
+                                window.removeEventListener('mousemove', moveSlider);
+                            });
+                            slider.addEventListener('touchstart', () => {
+                                window.addEventListener('touchmove', moveSlider);
+                            });
+                            window.addEventListener('touchend', () => {
+                                window.removeEventListener('touchmove', moveSlider);
+                            });
+
+                            // Sincroniza no carregamento e no redimensionamento da tela
+                            window.addEventListener('resize', syncImageSize);
+                            syncImageSize();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-aura-yellow/50">
+        <div class="max-w-7xl mx-auto px-4 text-center fade-in-section">
+            <h2 class="font-serif text-3xl text-aura-heading mb-12">Histórias que Inspiram</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i class="fas fa-quote-left text-4xl text-aura-pink-dark/20 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"Atendimento impecável! O ambiente me trouxe muita paz e os resultados do meu tratamento facial foram visíveis já na primeira semana. Autoestima renovada!"</p>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full bg-[url('imagens/Mariana.webp')] bg-cover"></div>
+                        <div class="text-left">
+                            <h4 class="font-bold text-sm text-aura-heading">Mariana Silva</h4>
+                            <div class="text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative">
+                    <i class="fas fa-quote-left text-4xl text-aura-pink-dark/20 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"Fiz o pacote de criolipólise e estou impressionada com o cuidado da equipe. Explicam tudo passo a passo. Me senti super segura."</p>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full bg-[url('imagens/Camila.webp')] bg-cover"></div>
+                        <div class="text-left">
+                            <h4 class="font-bold text-sm text-aura-heading">Camila Costa</h4>
+                            <div class="text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white p-8 rounded-2xl shadow-sm relative hidden md:block">
+                    <i class="fas fa-quote-left text-4xl text-aura-pink-dark/20 absolute top-4 left-4"></i>
+                    <p class="text-gray-600 italic mb-6 relative z-10">"O Spa Day Aura foi um presente que me dei. As massagens e o ambiente relaxante me fizeram esquecer do mundo lá fora. Excelente!"</p>
+                    <div class="flex items-center justify-center gap-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full bg-[url('imagens/Juliana.webp')] bg-cover"></div>
+                        <div class="text-left">
+                            <h4 class="font-bold text-sm text-aura-heading">Juliana T.</h4>
+                            <div class="text-yellow-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white">
+        <div class="max-w-3xl mx-auto px-4 fade-in-section">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-4">Dúvidas Frequentes</h2>
+                <p class="text-gray-500 font-light">Tudo o que você precisa saber antes de iniciar sua jornada de beleza conosco.</p>
+            </div>
+            
+            <div class="space-y-4"> 
+                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
+                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
+                        <span>Os procedimentos estéticos são doloridos?</span>
+                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        A maioria dos nossos procedimentos é minimamente invasiva. Para tratamentos injetáveis, utilizamos anestésicos tópicos ou locais de alta eficácia para garantir o máximo de conforto possível durante a sessão.
+                    </p>
+                </details>
+
+                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
+                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
+                        <span>Preciso de avaliação antes de realizar qualquer serviço?</span>
+                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        Com certeza. Na Aura Concept, prezamos pela segurança. Cada paciente passa por uma consulta diagnóstica para avaliarmos histórico de saúde, expectativas e biotipo, garantindo um protocolo personalizado.
+                    </p>
+                </details>
+
+                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
+                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
+                        <span>Em quanto tempo verei os resultados?</span>
+                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        Isso varia conforme o tratamento. Limpezas de pele e hidratações têm resultado imediato. Já procedimentos como bioestimuladores de colágeno ou tratamentos corporais podem levar de 15 a 30 dias para apresentarem o resultado final progressivo.
+                    </p>
+                </details>
+
+                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
+                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
+                        <span>Quais as formas de pagamento aceitas?</span>
+                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        Aceitamos cartões de crédito (com parcelamento facilitado em pacotes), débito, PIX e dinheiro. Oferecemos condições especiais para fechamento de protocolos combinados.
+                    </p>
+                </details>
+
+                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
+                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
+                        <span>Existe algum cuidado especial antes do procedimento?</span>
+                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        Recomendamos evitar a exposição solar intensa e o uso de ácidos fortes 48h antes da maioria dos tratamentos faciais. No momento do agendamento, nossa equipe enviará todas as orientações específicas para o seu caso.
+                    </p>
+                </details>
+
+                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
+                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
+                        <span>A clínica oferece acompanhamento pós-procedimento?</span>
+                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
+                        Sim! O nosso cuidado não termina quando você sai da maca. Realizamos retornos para avaliação de resultados e oferecemos suporte via WhatsApp para qualquer dúvida que surja durante a sua recuperação.
+                    </p>
+                </details>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 text-sm italic">Ainda tem dúvidas? <a href="https://wa.me/5511999999999" class="text-aura-pink-dark font-semibold underline decoration-2 underline-offset-4">Fale diretamente com uma especialista.</a></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contato" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16 fade-in-section">
+                
+                <div class="w-full lg:w-1/2">
+                    <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-6">Venha nos Fazer uma Visita</h2>
+                    <p class="text-gray-600 font-light mb-8">Estamos localizados em um ponto de fácil acesso, com estacionamento conveniado para sua comodidade.</p>
+                    
+                    <div class="space-y-6 mb-8">
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-map-marker-alt text-aura-pink-dark text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-aura-heading">Endereço</h4>
+                                <p class="text-gray-600 text-sm">Av. da Beleza e Bem-Estar, 123 - Sala 405<br>Bairro Nobre, Cidade - UF, 00000-000</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-clock text-aura-pink-dark text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-aura-heading">Horário de Funcionamento</h4>
+                                <p class="text-gray-600 text-sm">Segunda a Sexta: 08h às 20h<br>Sábados: 08h às 14h</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <i class="fas fa-phone-alt text-aura-pink-dark text-xl mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-aura-heading">Contato</h4>
+                                <p class="text-gray-600 text-sm">+55 (11) 99999-9999<br>contato@auraconcept.com.br</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="w-full h-64 bg-gray-200 rounded-xl overflow-hidden shadow-sm">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.19758702902!2d-46.66367368502213!3d-23.56133748468249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+
+                <div id="agendamento" class="w-full lg:w-1/2 bg-aura-neutral p-8 rounded-3xl shadow-sm">
+                    <h3 class="font-serif text-2xl text-aura-heading mb-2">Agende sua Avaliação</h3>
+                    <p class="text-sm text-gray-500 mb-8">Preencha os dados abaixo e nossa equipe entrará em contato via WhatsApp para confirmar seu horário.</p>
+                    
+                    <form class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium text-aura-heading mb-1">Nome Completo</label>
+                            <input type="text" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-aura-pink-dark bg-white" placeholder="Seu nome">
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-sm font-medium text-aura-heading mb-1">Telefone / WhatsApp</label>
+                                <input type="tel" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-aura-pink-dark bg-white" placeholder="(00) 00000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-aura-heading mb-1">E-mail</label>
+                                <input type="email" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-aura-pink-dark bg-white" placeholder="seu@email.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-aura-heading mb-1">Interesse Principal</label>
+                            <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-aura-pink-dark bg-white text-gray-600">
+                                <option>Estética Facial</option>
+                                <option>Estética Corporal</option>
+                                <option>Bem-estar e Spa</option>
+                                <option>Apenas Avaliação</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-aura-heading mb-1">Mensagem (Opcional)</label>
+                            <textarea rows="3" class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-aura-pink-dark bg-white" placeholder="Como podemos te ajudar?"></textarea>
+                        </div>
+                        <button type="button" class="w-full bg-aura-pink-dark text-white font-medium py-4 rounded-lg hover:bg-opacity-90 transition shadow-md flex justify-center items-center gap-2">
+                            Solicitar Agendamento
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-aura-heading text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="space-y-6">
+                <a href="#" class="flex items-center gap-1 group w-fit">
+                    <img src="imagens/icone.webp" alt="Ícone Aura Concept" class="h-12 w-auto object-contain transition-transform group-hover:scale-105">
+                    <img src="imagens/marca.webp" alt="Texto Aura Concept" class="h-10 w-auto object-contain transition-transform group-hover:scale-105">
+                </a>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    Realçando sua beleza com saúde, tecnologia e cuidado especializado em estética facial, corporal e bem-estar.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-10 h-10 rounded-full border border-aura-pink/30 flex items-center justify-center text-aura-pink-dark hover:bg-aura-pink-dark hover:text-white transition-all">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full border border-aura-pink/30 flex items-center justify-center text-aura-pink-dark hover:bg-aura-pink-dark hover:text-white transition-all">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Links Rápidos</h4>
+                <ul class="space-y-4 text-sm text-gray-400 font-light">
+                    <li><a href="#inicio" class="hover:text-aura-pink-dark transition-colors">Início</a></li>
+                    <li><a href="#sobre" class="hover:text-aura-pink-dark transition-colors">Sobre Nós</a></li>
+                    <li><a href="#servicos" class="hover:text-aura-pink-dark transition-colors">Serviços</a></li>
+                    
+                    <li>
+                        <button onclick="openQuiz()" class="hover:text-aura-pink-dark transition-colors flex items-center gap-2">
+                            <i class="fas fa-magic text-xs"></i> Quiz de Beleza
+                        </button>
+                    </li>
+                    
+                    <li><a href="#contato" class="hover:text-aura-pink-dark transition-colors">Contato</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Políticas</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="#" class="hover:text-aura-pink transition">Política de Privacidade</a></li>
+                    <li><a href="#" class="hover:text-aura-pink transition">Termos de Uso</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-500 text-xs">
+            &copy; 2026 Aura Concept Beauty and Health Clinic. Todos os direitos reservados.
+        </div>
+    </footer>
+
+    <a href="https://wa.me/5511999999999" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-[#128C7E] transition-colors z-50 whatsapp-float">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menu Mobile Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu mobile ao clicar em um link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer para animações suaves ao rolar a página
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target); // Anima apenas na primeira vez
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+    <div id="quiz-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-300">
+            
+            <button onclick="closeQuiz()" class="absolute top-4 right-4 text-gray-400 hover:text-aura-heading text-xl">
+                <i class="fas fa-times"></i>
+            </button>
+
+            <div class="p-8 md:p-10">
+                <div class="w-full bg-gray-100 h-1.5 rounded-full mb-8">
+                    <div id="quiz-progress" class="bg-aura-pink-dark h-1.5 rounded-full transition-all duration-500" style="width: 25%"></div>
+                </div>
+
+                <div id="quiz-content">
+                    <div id="step-1" class="quiz-step">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-2">O que mais incomoda você hoje?</h3>
+                        <p class="text-sm text-gray-500 mb-6">Selecione seu principal objetivo.</p>
+                        <div class="space-y-3">
+                            <button onclick="nextStep(2, 'facial')" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all flex justify-between items-center group">
+                                <span>Rugas, Manchas ou Flacidez Facial</span>
+                                <i class="fas fa-chevron-right text-gray-300 group-hover:text-aura-pink-dark"></i>
+                            </button>
+                            <button onclick="nextStep(2, 'corporal')" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all flex justify-between items-center group">
+                                <span>Gordura Localizada ou Celulite</span>
+                                <i class="fas fa-chevron-right text-gray-300 group-hover:text-aura-pink-dark"></i>
+                            </button>
+                            <button onclick="nextStep(2, 'bemestar')" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all flex justify-between items-center group">
+                                <span>Cansaço e Estresse (Preciso Relaxar)</span>
+                                <i class="fas fa-chevron-right text-gray-300 group-hover:text-aura-pink-dark"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="step-2" class="quiz-step hidden">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-2">Qual seu tipo de pele?</h3>
+                        <p class="text-sm text-gray-500 mb-6">Isso nos ajuda a definir os produtos.</p>
+                        <div class="space-y-3">
+                            <button onclick="nextStep(3)" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Seca ou Sensível</button>
+                            <button onclick="nextStep(3)" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Mista ou Oleosa</button>
+                            <button onclick="nextStep(3)" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Não tenho certeza</button>
+                        </div>
+                    </div>
+
+                    <div id="step-3" class="quiz-step hidden">
+                        <h3 class="font-serif text-2xl text-aura-heading mb-2">Já realizou algum procedimento estético?</h3>
+                        <p class="text-sm text-gray-500 mb-6">Queremos entender seu histórico.</p>
+                        <div class="space-y-3">
+                            <button onclick="showResult()" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Sim, sou fã de autocuidado!</button>
+                            <button onclick="showResult()" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Não, seria minha primeira vez.</button>
+                        </div>
+                    </div>
+
+                    <div id="step-result" class="quiz-step hidden text-center">
+                        <div class="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
+                            <i class="fas fa-wand-magic-sparkles"></i>
+                        </div>
+                        <h3 class="font-serif text-2xl text-aura-heading mb-2">Temos uma recomendação!</h3>
+                        <p id="result-text" class="text-gray-600 mb-8 font-light">Baseado nas suas respostas, o **Protocolo Aura Regenerative** é o mais indicado para você.</p>
+                        <button onclick="sendQuizToWhatsApp()" class="w-full bg-[#25D366] text-white font-bold py-4 rounded-xl hover:bg-opacity-90 transition shadow-lg flex justify-center items-center gap-2">
+                            <i class="fab fa-whatsapp text-xl"></i> Receber Detalhes via WhatsApp
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let userChoice = "";
+
+        function openQuiz() {
+            document.getElementById('quiz-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
+        }
+
+        function closeQuiz() {
+            document.getElementById('quiz-modal').classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        }
+
+        function nextStep(step, choice = null) {
+            if(choice) userChoice = choice;
+            
+            // Esconde todos
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
+            // Mostra o atual
+            document.getElementById('step-' + step).classList.remove('hidden');
+            
+            // Atualiza progresso
+            const progress = (step / 3) * 100;
+            document.getElementById('quiz-progress').style.width = progress + '%';
+        }
+
+        function showResult() {
+            document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
+            const resultStep = document.getElementById('step-result');
+            const text = document.getElementById('result-text');
+            
+            if(userChoice === 'facial') {
+                text.innerHTML = "O seu perfil indica que o **Combo Harmonização Glow** (Limpeza + Botox) trará os melhores resultados imediatos.";
+            } else if(userChoice === 'corporal') {
+                text.innerHTML = "O seu perfil indica o **Protocolo Sculpt Aura**, focado em drenagem e quebra de gordura localizada.";
+            } else {
+                text.innerHTML = "O seu perfil indica um **Day Spa Terapêutico**, combinando massagem relaxante com aromaterapia.";
+            }
+
+            resultStep.classList.remove('hidden');
+            document.getElementById('quiz-progress').style.width = '100%';
+        }
+
+        function sendQuizToWhatsApp() {
+            const msg = "Olá Aura Concept! Acabei de fazer o quiz no site e meu resultado foi o perfil " + userChoice + ". Gostaria de saber mais sobre os protocolos indicados.";
+            const url = "https://wa.me/5511999999999?text=" + encodeURIComponent(msg);
+            window.open(url, '_blank');
+        }
+    </script>
+</body>
+</html>
