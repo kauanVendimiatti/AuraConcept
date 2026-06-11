@@ -6,7 +6,7 @@
     <title>Aura Concept | Beauty and Health Clinic</title>
     <meta name="description" content="Aura Concept Beauty and Health Clinic. Realçando sua beleza com saúde, tecnologia e cuidado especializado em estética facial, corporal e bem-estar.">
     
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">   
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
@@ -72,6 +72,14 @@
             70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
             100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
         }
+
+        /* Details Custom Style for accordions */
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
     </style>
 </head>
 
@@ -89,6 +97,7 @@
                     <a href="#home" class="text-aura-text hover:text-aura-pink-dark transition-colors">Início</a>
                     <a href="#sobre" class="text-aura-text hover:text-aura-pink-dark transition-colors">Sobre Nós</a>
                     <a href="#procedimentos" class="text-aura-text hover:text-aura-pink-dark transition-colors">Procedimentos</a>
+                    <a href="#roteiro" class="text-aura-text hover:text-aura-pink-dark transition-colors">Atendimento</a>
                     <a href="#galeria" class="text-aura-text hover:text-aura-pink-dark transition-colors">Galeria</a>
                     <a href="#contato" class="text-aura-text hover:text-aura-pink-dark transition-colors">Contato</a>
                     <a href="#agendamento" class="bg-aura-pink-dark text-white px-5 py-2 rounded-full hover:bg-opacity-80 transition-all shadow-md">Agendar</a>
@@ -107,6 +116,7 @@
                 <a href="#home" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Início</a>
                 <a href="#sobre" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Sobre Nós</a>
                 <a href="#procedimentos" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Procedimentos</a>
+                <a href="#roteiro" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Atendimento</a>
                 <a href="#contato" class="block px-3 py-2 text-aura-text hover:bg-aura-pink rounded-md">Contato</a>
             </div>
         </div>
@@ -159,11 +169,13 @@
             </div>
         </div>
     </section>
+
     <div class="text-center py-8">
-    <button onclick="openQuiz()" class="bg-aura-heading text-white px-10 py-5 rounded-full hover:scale-105 transition-all shadow-xl font-medium flex items-center gap-3 mx-auto">
-        <i class="fas fa-magic"></i> Descobrir meu Protocolo Ideal
-    </button>
-</div>
+        <button onclick="openQuiz()" class="bg-aura-heading text-white px-10 py-5 rounded-full hover:scale-105 transition-all shadow-xl font-medium flex items-center gap-3 mx-auto">
+            <i class="fas fa-magic"></i> Descobrir meu Protocolo Ideal
+        </button>
+    </div>
+
     <section id="sobre" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col md:flex-row items-center gap-16 fade-in-section">
@@ -199,71 +211,138 @@
         </div>
     </section>
 
+    <!-- INÍCIO DA SEÇÃO 6: PROCEDIMENTOS -->
     <section id="procedimentos" class="py-24 bg-aura-neutral">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
-                <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-4">Nossos Tratamentos</h2>
-                <p class="text-gray-600 font-light">Descubra as soluções perfeitas para realçar sua beleza natural e promover seu bem-estar completo.</p>
+                <span class="text-sm uppercase tracking-[0.3em] text-aura-pink-dark mb-4 block font-bold">Procedimentos</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-4">Protocolos Clínicos Avançados</h2>
+                <p class="text-gray-600 font-light">Protocolos especializados e personalizados embasados na literatura científica de alta eficácia.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in-section">
+            <div class="space-y-12 fade-in-section">
                 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="imagens/Tratamento.webp" alt="Estética Facial" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-aura-heading">Facial</div>
+                <!-- 6.1 Protocolo Facial -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100">
+                    <div class="bg-aura-pink px-8 py-6 border-b border-white flex items-center justify-between">
+                        <h3 class="font-serif text-2xl md:text-3xl text-aura-heading">Protocolo para Cicatriz de Acne</h3>
+                        <span class="hidden md:inline-block bg-white px-4 py-1 rounded-full text-xs font-semibold text-aura-pink-dark shadow-sm">Facial</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl text-aura-heading mb-3">Harmonização e Cuidado</h3>
-                        <p class="text-sm text-gray-600 mb-4 h-20 line-clamp-3">Tratamentos voltados para rejuvenescimento, hidratação profunda e simetria. Indicado para prevenção de linhas de expressão, manchas e flacidez.</p>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Botox e Preenchimento</li>
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Limpeza de Pele Profunda</li>
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Peeling Químico</li>
-                        </ul>
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 30-60 min</span>
-                            <a href="#agendamento" class="text-aura-pink-dark text-sm font-medium hover:underline">Saber mais &rarr;</a>
+                    <div class="p-8 md:p-10 space-y-8">
+                        <div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4"><strong>Avaliação inicial:</strong> Antes do procedimento, o paciente passa por uma avaliação estética completa para identificar tipo de cicatriz, profundidade, sensibilidade cutânea, contraindicações e histórico de alergias. Essa avaliação é fundamental para definir os ativos utilizados, profundidade da aplicação e quantidade de sessões necessárias. Também é importante avaliar a presença de acne inflamatória ativa, grau de oleosidade da pele e presença de hiperpigmentação pós-inflamatória, pois essas alterações influenciam diretamente na escolha do protocolo.</p>
+                            <p class="text-gray-600 text-sm leading-relaxed"><strong>Objetivo do protocolo:</strong> O protocolo facial tem como objetivo estimular a produção de colágeno, reorganizar fibras dérmicas e melhorar depressões causadas pelas cicatrizes de acne. Além disso, busca uniformizar a textura da pele e reduzir manchas pós-inflamatórias. O tratamento também promove melhora da hidratação, elasticidade e regeneração cutânea através da ação dos ativos aplicados diretamente na derme.</p>
+                        </div>
+
+                        <!-- Grid Info -->
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                <h5 class="font-bold text-aura-heading text-sm mb-2"><i class="fas fa-crosshairs text-aura-pink-dark mr-1"></i> Técnica Utilizada</h5>
+                                <p class="text-xs text-gray-600">Ponto a ponto (pequenas quantidades dos ativos aplicadas diretamente sobre cada cicatriz). Aplicação realizada com agulha fina em ângulo de aproximadamente 90° depositando pequenas doses intradérmicas na região lesionada. Potencializa o estímulo de colágeno e melhora da textura da pele.</p>
+                            </div>
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                <h5 class="font-bold text-aura-heading text-sm mb-2"><i class="fas fa-ruler-vertical text-aura-pink-dark mr-1"></i> Profundidade</h5>
+                                <p class="text-xs text-gray-600">Varia entre 1 mm e 4 mm, dependendo do tipo e profundidade da cicatriz. Essa profundidade é necessária para atingir a derme superficial e média, estimulando a regeneração adequada e a remodelação do tecido.</p>
+                            </div>
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                <h5 class="font-bold text-aura-heading text-sm mb-2"><i class="far fa-calendar-alt text-aura-pink-dark mr-1"></i> Intervalo</h5>
+                                <p class="text-xs text-gray-600">Realizado a cada 21 dias, totalizando em média 6 sessões. Esse intervalo é necessário para permitir a reorganização das fibras de colágeno, regeneração celular e a recuperação da pele entre as aplicações.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordions para Ativos e Enzimas -->
+                        <div class="space-y-4">
+                            <details class="group border border-gray-200 rounded-xl p-5 cursor-pointer bg-white hover:bg-gray-50 transition">
+                                <summary class="flex justify-between items-center font-medium text-aura-heading">
+                                    <span class="flex items-center gap-2">Ativos Utilizados no Protocolo Facial</span>
+                                    <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="mt-4 space-y-4 text-sm text-gray-600 border-t pt-4">
+                                    <p><strong>Ácido hialurônico:</strong> Substância naturalmente presente no organismo. Sua principal função é reter água, promovendo hidratação, volume e elasticidade cutânea. Melhora depressões atróficas, auxilia no preenchimento tecidual e estimula a reparação dérmica e organização das fibras.</p>
+                                    <p><strong>Silício orgânico:</strong> Ativo utilizado para estimular fibroblastos responsáveis pela produção de colágeno e elastina. Promove regeneração tecidual, melhora a sustentação da pele e auxilia na reorganização das fibras dérmicas lesionadas pelas cicatrizes.</p>
+                                    <p><strong>Vitamina C:</strong> Possui forte ação antioxidante, protegendo as células. É utilizada para auxiliar o clareamento de manchas pós-inflamatórias, estimular a síntese de colágeno, melhorar a luminosidade da pele e acelerar a cicatrização.</p>
+                                    <p><strong>Fatores de crescimento:</strong> Proteínas responsáveis pela comunicação entre as células e pelo estímulo da regeneração tecidual. Promovem proliferação celular, aceleram a recuperação das áreas lesionadas, favorecem a reorganização das fibras e auxiliam a melhorar a profundidade das cicatrizes.</p>
+                                </div>
+                            </details>
+
+                            <details class="group border border-gray-200 rounded-xl p-5 cursor-pointer bg-white hover:bg-gray-50 transition">
+                                <summary class="flex justify-between items-center font-medium text-aura-heading">
+                                    <span class="flex items-center gap-2">Enzimas Utilizadas</span>
+                                    <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="mt-4 space-y-4 text-sm text-gray-600 border-t pt-4">
+                                    <p>As enzimas atuam diretamente nos tecidos promovendo regeneração, remodelação dérmica, melhora da circulação local e reorganização das fibras cutâneas.</p>
+                                    <p><strong>Colagenase:</strong> Responsável pela degradação de fibras de colágeno envelhecidas ou desorganizadas. Após essa degradação, ocorre o estímulo para a formação de novas fibras colágenas mais organizadas, promovendo remodelação e melhora da textura.</p>
+                                    <p><strong>Hialuronidase:</strong> Promove a quebra do ácido hialurônico presente entre as células. Essa ação aumenta a permeabilidade dos tecidos, facilita a difusão dos ativos, reduz fibroses e potencializa os resultados estéticos.</p>
+                                    <p><strong>Tripeptídeos bioestimuladores:</strong> Atuam estimulando fibroblastos para a produção de colágeno e elastina. Auxiliam na regeneração dérmica, melhora da elasticidade e fortalecimento estrutural da pele.</p>
+                                </div>
+                            </details>
+
+                            <details class="group border border-gray-200 rounded-xl p-5 cursor-pointer bg-white hover:bg-gray-50 transition">
+                                <summary class="flex justify-between items-center font-medium text-aura-heading">
+                                    <span class="flex items-center gap-2">Etapas do Procedimento e Cuidados Pós</span>
+                                    <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="mt-4 space-y-4 text-sm text-gray-600 border-t pt-4">
+                                    <p><strong>Higienização:</strong> Inicialmente é realizada a limpeza da pele utilizando sabonete antisséptico e clorexidina. Em seguida, aplica-se anestésico tópico por aproximadamente 30 minutos para reduzir o desconforto.</p>
+                                    <p><strong>Aplicação:</strong> Os ativos são aplicados utilizando seringa de 1 mL e agulha 30G pela técnica ponto a ponto. Após a aplicação, utiliza-se máscara calmante, LED azul (auxilia no controle bacteriano e na redução do processo inflamatório) e protetor solar FPS 50.</p>
+                                    <p><strong>Cuidados pós-procedimento:</strong> Após o procedimento, o paciente deve evitar a exposição solar, utilizar protetor solar diariamente, evitar o uso de ácidos por 48 horas, manter a hidratação adequada da pele e não manipular a região tratada.</p>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="imagens/Oleo.webp" alt="Estética Corporal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-aura-heading">Corporal</div>
+                <!-- 6.2 Protocolo Corporal -->
+                <div class="bg-white rounded-3xl shadow-sm overflow-hidden border border-gray-100 mt-8">
+                    <div class="bg-aura-pink px-8 py-6 border-b border-white flex items-center justify-between">
+                        <h3 class="font-serif text-2xl md:text-3xl text-aura-heading">Protocolo para Cicatrizes Corporais</h3>
+                        <span class="hidden md:inline-block bg-white px-4 py-1 rounded-full text-xs font-semibold text-aura-pink-dark shadow-sm">Corporal</span>
                     </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl text-aura-heading mb-3">Contorno e Firmeza</h3>
-                        <p class="text-sm text-gray-600 mb-4 h-20 line-clamp-3">Protocolos avançados para redução de medidas, celulite e flacidez. Recupere o contorno corporal com tecnologias não-invasivas.</p>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Drenagem Linfática</li>
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Radiofrequência</li>
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Criolipólise</li>
-                        </ul>
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 45-90 min</span>
-                            <a href="#agendamento" class="text-aura-pink-dark text-sm font-medium hover:underline">Saber mais &rarr;</a>
+                    <div class="p-8 md:p-10 space-y-8">
+                        <div>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4"><strong>Objetivo do protocolo:</strong> O protocolo corporal busca melhorar a textura, elasticidade e reorganização do tecido cicatricial, reduzindo irregularidades e promovendo a regeneração da pele.</p>
+                            <p class="text-gray-600 text-sm leading-relaxed"><strong>Resultados esperados:</strong> Com os protocolos desenvolvidos, espera-se a melhora da textura cutânea, redução da profundidade das cicatrizes, estímulo de colágeno, uniformização da pele, melhora da elasticidade e regeneração do tecido lesionado.</p>
                         </div>
-                    </div>
-                </div>
 
-                <div class="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-shadow duration-300 overflow-hidden group">
-                    <div class="h-48 overflow-hidden relative">
-                        <img src="imagens/Aesthetic.webp" alt="Saúde e Bem-estar" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
-                        <div class="absolute top-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-semibold text-aura-heading">Spa & Saúde</div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-serif text-2xl text-aura-heading mb-3">Relaxamento Total</h3>
-                        <p class="text-sm text-gray-600 mb-4 h-20 line-clamp-3">Desconecte-se da rotina. Nossas terapias de relaxamento aliviam tensões musculares, estresse e promovem o equilíbrio corpo-mente.</p>
-                        <ul class="text-sm text-gray-500 mb-6 space-y-2">
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Massagem Relaxante</li>
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Spa Day Aura</li>
-                            <li><i class="fas fa-circle text-[8px] text-aura-pink-dark mr-2"></i> Terapias Holísticas</li>
-                        </ul>
-                        <div class="flex justify-between items-center pt-4 border-t border-gray-100">
-                            <span class="text-xs text-gray-400"><i class="far fa-clock mr-1"></i> 60-120 min</span>
-                            <a href="#agendamento" class="text-aura-pink-dark text-sm font-medium hover:underline">Saber mais &rarr;</a>
+                        <!-- Grid Info Corporal -->
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                <h5 class="font-bold text-aura-heading text-sm mb-2"><i class="fas fa-syringe text-aura-pink-dark mr-1"></i> Técnica e Profundidade</h5>
+                                <p class="text-xs text-gray-600"><strong>Retroinjeção linear:</strong> A agulha é inserida abaixo da cicatriz e o ativo é liberado lentamente enquanto a agulha é retirada. Esse método permite uma distribuição uniforme do produto em cicatrizes maiores. A profundidade da aplicação varia entre 2 mm e 6 mm, dependendo da região corporal e da espessura da pele.</p>
+                            </div>
+                            <div class="bg-gray-50 p-5 rounded-xl border border-gray-100">
+                                <h5 class="font-bold text-aura-heading text-sm mb-2"><i class="far fa-clock text-aura-pink-dark mr-1"></i> Intervalo das Sessões</h5>
+                                <p class="text-xs text-gray-600">As sessões são realizadas a cada 30 dias para permitir a recuperação completa do tecido e a reorganização das fibras de colágeno.</p>
+                            </div>
+                        </div>
+
+                        <!-- Accordions para Corporal -->
+                        <div class="space-y-4">
+                            <details class="group border border-gray-200 rounded-xl p-5 cursor-pointer bg-white hover:bg-gray-50 transition">
+                                <summary class="flex justify-between items-center font-medium text-aura-heading">
+                                    <span class="flex items-center gap-2">Ativos Utilizados no Protocolo Corporal</span>
+                                    <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="mt-4 space-y-4 text-sm text-gray-600 border-t pt-4">
+                                    <p><strong>Silício orgânico:</strong> Utilizado devido à sua capacidade de estimular a produção de colágeno e melhorar a firmeza da pele. Sua ação regeneradora auxilia na reorganização das fibras dérmicas lesionadas.</p>
+                                    <p><strong>DMAE (dimetilaminoetanol):</strong> Ativo com efeito tensor e firmador. Promove a melhora da flacidez cutânea, possui ação antioxidante contra o envelhecimento celular precoce e auxilia na melhora da firmeza da pele ao redor da cicatriz.</p>
+                                    <p><strong>Ácido hialurônico:</strong> Promove a hidratação e a melhora da elasticidade cutânea, auxiliando no preenchimento tecidual e na aparência das cicatrizes atróficas.</p>
+                                    <p><strong>Centella asiática:</strong> Ativo vegetal com forte ação cicatrizante e regeneradora. Estimula a circulação sanguínea local, melhora a oxigenação dos tecidos, auxilia a produção de colágeno e possui ação anti-inflamatória.</p>
+                                </div>
+                            </details>
+
+                            <details class="group border border-gray-200 rounded-xl p-5 cursor-pointer bg-white hover:bg-gray-50 transition">
+                                <summary class="flex justify-between items-center font-medium text-aura-heading">
+                                    <span class="flex items-center gap-2">Enzimas Utilizadas</span>
+                                    <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
+                                </summary>
+                                <div class="mt-4 space-y-4 text-sm text-gray-600 border-t pt-4">
+                                    <p><strong>Colagenase:</strong> Auxilia a remodelação das fibras cicatriciais e melhora a textura da pele através da degradação do colágeno desorganizado presente nas cicatrizes.</p>
+                                    <p><strong>Streptokinase:</strong> Enzima com ação fibrinolítica e circulatória. Sua principal função é auxiliar a quebra de fibroses e melhorar a circulação sanguínea local, favorecendo a oxigenação e a regeneração celular da região irregular.</p>
+                                    <p><strong>Hialuronidase:</strong> Reduz fibroses e melhora a permeação dos ativos aplicados, potencializando a absorção das substâncias utilizadas durante a intradermoterapia.</p>
+                                </div>
+                            </details>
                         </div>
                     </div>
                 </div>
@@ -272,6 +351,67 @@
         </div>
     </section>
 
+    <!-- INÍCIO DA SEÇÃO 7: ROTEIRO DE ATENDIMENTO -->
+    <section id="roteiro" class="py-24 bg-white">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
+                <span class="text-sm uppercase tracking-[0.3em] text-aura-pink-dark mb-4 block font-bold">O Processo</span>
+                <h2 class="font-serif text-3xl md:text-4xl text-aura-heading mb-4">Roteiro de Atendimento</h2>
+                <p class="text-gray-600 font-light">Uma jornada estruturada passo a passo para garantir sua segurança e os melhores resultados.</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative border-l-2 border-aura-pink-dark/50 ml-4 md:ml-auto fade-in-section space-y-8">
+                
+                <div class="relative pl-8">
+                    <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white bg-aura-pink-dark"></div>
+                    <h3 class="font-bold text-aura-heading text-lg">Agendamento</h3>
+                    <p class="mt-1 text-sm text-gray-600 leading-relaxed">O atendimento inicia-se com o agendamento, realizado por meio de canais como WhatsApp, telefone ou redes sociais. Coletamos informações básicas (nome, idade, queixa principal) e repassamos orientações prévias.</p>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white bg-aura-pink-dark"></div>
+                    <h3 class="font-bold text-aura-heading text-lg">Recepção e Acolhimento</h3>
+                    <p class="mt-1 text-sm text-gray-600 leading-relaxed">Ao chegar à clínica, o cliente é recepcionado de forma cordial. Seus dados são confirmados e é solicitado o preenchimento da ficha de anamnese, contendo histórico de saúde, uso de medicamentos e possíveis alergias.</p>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white bg-aura-pink-dark"></div>
+                    <h3 class="font-bold text-aura-heading text-lg">Avaliação Estética</h3>
+                    <p class="mt-1 text-sm text-gray-600 leading-relaxed">O profissional realiza uma avaliação detalhada e são feitos registros fotográficos para o acompanhamento da evolução. Consideramos: tipo de pele ou queixa, fototipo cutâneo, hábitos de vida e histórico clínico.</p>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white bg-aura-pink-dark"></div>
+                    <h3 class="font-bold text-aura-heading text-lg">Planejamento do Tratamento</h3>
+                    <p class="mt-1 text-sm text-gray-600 leading-relaxed">Com base na avaliação, elabora-se um protocolo personalizado. O profissional explica procedimentos indicados, número de sessões, intervalo entre elas, cuidados e investimento. Esclarecemos todas as dúvidas e é assinado o termo de consentimento.</p>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white bg-aura-pink-dark"></div>
+                    <h3 class="font-bold text-aura-heading text-lg">Execução do Procedimento</h3>
+                    <p class="mt-1 text-sm text-gray-600 leading-relaxed">O tratamento é realizado seguindo rigorosas normas de biossegurança e técnicas adequadas. O profissional mantém comunicação com o cliente durante todo o procedimento, garantindo conforto e segurança.</p>
+                </div>
+
+                <div class="relative pl-8">
+                    <div class="absolute -left-[11px] top-1 h-5 w-5 rounded-full border-4 border-white bg-aura-pink-dark"></div>
+                    <h3 class="font-bold text-aura-heading text-lg">Orientações e Acompanhamento</h3>
+                    <p class="mt-1 text-sm text-gray-600 leading-relaxed">Após o atendimento, são fornecidas orientações específicas pós-procedimento. O cliente é acompanhado ao longo do tratamento com reavaliações periódicas, registro da evolução e ajustes no protocolo se necessário.</p>
+                </div>
+
+            </div>
+
+            <!-- Citação Protocolos Personalizados -->
+            <div class="mt-16 bg-aura-neutral p-8 rounded-2xl border-l-4 border-aura-pink-dark fade-in-section shadow-sm">
+                <h4 class="font-serif text-xl text-aura-heading mb-3"><i class="fas fa-star text-aura-pink-dark text-sm mr-2"></i> Os Protocolos Personalizados</h4>
+                <p class="text-gray-600 text-sm leading-relaxed italic">
+                    A intradermoterapia possibilita tratamentos individualizados de acordo com as necessidades de cada paciente. Eles representam uma das maiores tendências da estética moderna, pois consideram: o tipo de pele, o grau da disfunção estética, a idade, o histórico clínico e o estilo de vida do paciente.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Oferta Especial (Mês do Autocuidado) -->
     <section class="py-16 bg-aura-pink">
         <div class="max-w-7xl mx-auto px-4 text-center fade-in-section">
             <h2 class="font-serif text-2xl md:text-3xl text-aura-heading mb-4">Mês do Autocuidado</h2>
@@ -284,6 +424,7 @@
         </div>
     </section>
 
+    <!-- Galeria e Estrutura -->
     <section id="galeria" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-16 fade-in-section">
@@ -302,48 +443,23 @@
                 <div class="flex flex-col md:flex-row items-center gap-12">
                     <div class="w-full md:w-1/3">
                         <h3 class="font-serif text-2xl text-aura-heading mb-4">Resultados Reais</h3>
-                        
                         <p class="text-gray-600 font-light mb-6">Trabalhamos para realçar o que há de melhor em você. Arraste para ver a evolução do tratamento de harmonização facial (Ilustração).</p>
                     </div>
                     <div class="w-full md:w-2/3 bg-white rounded-2xl overflow-hidden shadow-2xl relative select-none touch-none h-[400px]" id="before-after-slider">
-    
                         <div class="absolute inset-0">
-                            <img src="imagens/Depois.webp" 
-                                class="absolute inset-0 w-full h-full object-cover" alt="Depois">
-                            <div class="absolute bottom-4 right-4 bg-aura-pink-dark text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow-md z-10">
-                                Depois
-                            </div>
+                            <img src="imagens/Depois.webp" class="absolute inset-0 w-full h-full object-cover" alt="Depois">
+                            <div class="absolute bottom-4 right-4 bg-aura-pink-dark text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full shadow-md z-10">Depois</div>
                         </div>
-
                         <div class="absolute inset-0 overflow-hidden w-1/2 border-r border-white/50" id="before-image-wrapper">
-                            <img src="imagens/Antes.webp" 
-                                class="absolute inset-0 h-full object-cover filter grayscale" alt="Antes" id="before-img">
-                            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm z-10">
-                                Antes
-                            </div>
+                            <img src="imagens/Antes.webp" class="absolute inset-0 h-full object-cover filter grayscale" alt="Antes" id="before-img">
+                            <div class="absolute bottom-4 left-4 bg-black/60 text-white text-[10px] uppercase tracking-widest px-3 py-1 rounded-full backdrop-blur-sm z-10">Antes</div>
                         </div>
-
                         <div class="absolute inset-y-0 left-1/2 w-1 bg-white cursor-ew-resize z-20 group" id="slider-handle">
                             <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-xl flex items-center justify-center text-aura-pink-dark group-hover:scale-110 transition-transform">
                                 <i class="fas fa-arrows-left-right"></i>
                             </div>
                         </div>
                     </div>
-
-                    <style>
-                        #before-after-slider {
-                            position: relative;
-                        }
-                        #before-image-wrapper {
-                            width: 50%; /* Posição inicial */
-                            border-right: 1px solid white;
-                        }
-                        /* Impedir que as imagens sejam arrastadas como arquivos */
-                        #before-after-slider img {
-                            pointer-events: none;
-                            user-select: none;
-                        }
-                    </style>
 
                     <script>
                         const slider = document.getElementById('before-after-slider');
@@ -352,39 +468,25 @@
                         const beforeImg = document.getElementById('before-img');
 
                         if (slider && beforeImg) {
-                            // Função para manter a imagem do antes com o tamanho real do slider
                             const syncImageSize = () => {
                                 beforeImg.style.width = slider.offsetWidth + 'px';
-                                beforeImg.style.maxWidth = 'none'; // Impede o Tailwind de limitar a largura
+                                beforeImg.style.maxWidth = 'none';
                             };
 
                             const moveSlider = (e) => {
                                 const rect = slider.getBoundingClientRect();
                                 let x = (e.pageX || (e.touches && e.touches[0].pageX)) - rect.left;
-                                
                                 if (x < 0) x = 0;
                                 if (x > rect.width) x = rect.width;
-
                                 const percent = (x / rect.width) * 100;
                                 wrapper.style.width = percent + '%';
                                 handle.style.left = percent + '%';
                             };
 
-                            // Eventos
-                            slider.addEventListener('mousedown', () => {
-                                window.addEventListener('mousemove', moveSlider);
-                            });
-                            window.addEventListener('mouseup', () => {
-                                window.removeEventListener('mousemove', moveSlider);
-                            });
-                            slider.addEventListener('touchstart', () => {
-                                window.addEventListener('touchmove', moveSlider);
-                            });
-                            window.addEventListener('touchend', () => {
-                                window.removeEventListener('touchmove', moveSlider);
-                            });
-
-                            // Sincroniza no carregamento e no redimensionamento da tela
+                            slider.addEventListener('mousedown', () => { window.addEventListener('mousemove', moveSlider); });
+                            window.addEventListener('mouseup', () => { window.removeEventListener('mousemove', moveSlider); });
+                            slider.addEventListener('touchstart', () => { window.addEventListener('touchmove', moveSlider); });
+                            window.addEventListener('touchend', () => { window.removeEventListener('touchmove', moveSlider); });
                             window.addEventListener('resize', syncImageSize);
                             syncImageSize();
                         }
@@ -394,6 +496,7 @@
         </div>
     </section>
 
+    <!-- Depoimentos -->
     <section class="py-20 bg-aura-yellow/50">
         <div class="max-w-7xl mx-auto px-4 text-center fade-in-section">
             <h2 class="font-serif text-3xl text-aura-heading mb-12">Histórias que Inspiram</h2>
@@ -435,6 +538,7 @@
         </div>
     </section>
 
+    <!-- FAQ -->
     <section class="py-24 bg-white">
         <div class="max-w-3xl mx-auto px-4 fade-in-section">
             <div class="text-center mb-12">
@@ -482,26 +586,6 @@
                         Aceitamos cartões de crédito (com parcelamento facilitado em pacotes), débito, PIX e dinheiro. Oferecemos condições especiais para fechamento de protocolos combinados.
                     </p>
                 </details>
-
-                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
-                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
-                        <span>Existe algum cuidado especial antes do procedimento?</span>
-                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
-                        Recomendamos evitar a exposição solar intensa e o uso de ácidos fortes 48h antes da maioria dos tratamentos faciais. No momento do agendamento, nossa equipe enviará todas as orientações específicas para o seu caso.
-                    </p>
-                </details>
-
-                <details class="group border-b border-aura-pink pb-5 cursor-pointer">
-                    <summary class="flex justify-between items-center list-none font-medium text-aura-heading text-lg">
-                        <span>A clínica oferece acompanhamento pós-procedimento?</span>
-                        <span class="transition group-open:rotate-180 text-aura-pink-dark"><i class="fas fa-chevron-down"></i></span>
-                    </summary>
-                    <p class="text-gray-500 mt-4 text-sm leading-relaxed">
-                        Sim! O nosso cuidado não termina quando você sai da maca. Realizamos retornos para avaliação de resultados e oferecemos suporte via WhatsApp para qualquer dúvida que surja durante a sua recuperação.
-                    </p>
-                </details>
             </div>
             
             <div class="mt-12 text-center">
@@ -510,6 +594,7 @@
         </div>
     </section>
 
+    <!-- Contato -->
     <section id="contato" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex flex-col lg:flex-row gap-16 fade-in-section">
@@ -543,7 +628,7 @@
                     </div>
 
                     <div class="w-full h-64 bg-gray-200 rounded-xl overflow-hidden shadow-sm">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.19758702902!2d-46.66367368502213!3d-23.56133748468249!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29440.79957716325!2d-47.64139520481282!3d-22.724526192651968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c63015d95ad8cd%3A0xf9665ca7fc56ef20!2sUniversidade%20Anhembi%20Morumbi%20Piracicaba!5e0!3m2!1spt-BR!2sbr!4v1781194704577!5m2!1spt-BR!2sbr" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                     </div>
                 </div>
 
@@ -569,8 +654,8 @@
                         <div>
                             <label class="block text-sm font-medium text-aura-heading mb-1">Interesse Principal</label>
                             <select class="w-full px-4 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-aura-pink-dark bg-white text-gray-600">
-                                <option>Estética Facial</option>
-                                <option>Estética Corporal</option>
+                                <option>Estética Facial (Cicatrizes)</option>
+                                <option>Estética Corporal (Cicatrizes)</option>
                                 <option>Bem-estar e Spa</option>
                                 <option>Apenas Avaliação</option>
                             </select>
@@ -589,6 +674,7 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="bg-aura-heading text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             <div class="space-y-6">
@@ -611,16 +697,15 @@
             <div>
                 <h4 class="font-bold text-lg mb-4">Links Rápidos</h4>
                 <ul class="space-y-4 text-sm text-gray-400 font-light">
-                    <li><a href="#inicio" class="hover:text-aura-pink-dark transition-colors">Início</a></li>
+                    <li><a href="#home" class="hover:text-aura-pink-dark transition-colors">Início</a></li>
                     <li><a href="#sobre" class="hover:text-aura-pink-dark transition-colors">Sobre Nós</a></li>
-                    <li><a href="#servicos" class="hover:text-aura-pink-dark transition-colors">Serviços</a></li>
-                    
+                    <li><a href="#procedimentos" class="hover:text-aura-pink-dark transition-colors">Procedimentos Clínicos</a></li>
+                    <li><a href="#roteiro" class="hover:text-aura-pink-dark transition-colors">Roteiro de Atendimento</a></li>
                     <li>
                         <button onclick="openQuiz()" class="hover:text-aura-pink-dark transition-colors flex items-center gap-2">
                             <i class="fas fa-magic text-xs"></i> Quiz de Beleza
                         </button>
                     </li>
-                    
                     <li><a href="#contato" class="hover:text-aura-pink-dark transition-colors">Contato</a></li>
                 </ul>
             </div>
@@ -637,73 +722,53 @@
         </div>
     </footer>
 
+    <!-- Scripts e Botão WhatsApp e Modal -->
     <a href="https://wa.me/5511999999999" target="_blank" class="fixed bottom-6 right-6 bg-[#25D366] text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-lg hover:bg-[#128C7E] transition-colors z-50 whatsapp-float">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <script>
-        // Menu Mobile Toggle
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('hidden');
-        });
+        btn.addEventListener('click', () => { menu.classList.toggle('hidden'); });
 
-        // Fechar menu mobile ao clicar em um link
         const mobileLinks = menu.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.add('hidden');
-            });
-        });
+        mobileLinks.forEach(link => { link.addEventListener('click', () => { menu.classList.add('hidden'); }); });
 
-        // Intersection Observer para animações suaves ao rolar a página
         document.addEventListener("DOMContentLoaded", function() {
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px',
-                threshold: 0.15
-            };
-
+            const observerOptions = { root: null, rootMargin: '0px', threshold: 0.15 };
             const observer = new IntersectionObserver((entries, observer) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target); // Anima apenas na primeira vez
+                        observer.unobserve(entry.target); 
                     }
                 });
             }, observerOptions);
 
             const sections = document.querySelectorAll('.fade-in-section');
-            sections.forEach(section => {
-                observer.observe(section);
-            });
+            sections.forEach(section => { observer.observe(section); });
         });
     </script>
     <div id="quiz-modal" class="fixed inset-0 z-[100] hidden flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
         <div class="bg-white w-full max-w-lg rounded-3xl overflow-hidden shadow-2xl relative animate-in fade-in zoom-in duration-300">
-            
-            <button onclick="closeQuiz()" class="absolute top-4 right-4 text-gray-400 hover:text-aura-heading text-xl">
-                <i class="fas fa-times"></i>
-            </button>
-
+            <button onclick="closeQuiz()" class="absolute top-4 right-4 text-gray-400 hover:text-aura-heading text-xl"><i class="fas fa-times"></i></button>
             <div class="p-8 md:p-10">
                 <div class="w-full bg-gray-100 h-1.5 rounded-full mb-8">
                     <div id="quiz-progress" class="bg-aura-pink-dark h-1.5 rounded-full transition-all duration-500" style="width: 25%"></div>
                 </div>
-
                 <div id="quiz-content">
                     <div id="step-1" class="quiz-step">
                         <h3 class="font-serif text-2xl text-aura-heading mb-2">O que mais incomoda você hoje?</h3>
                         <p class="text-sm text-gray-500 mb-6">Selecione seu principal objetivo.</p>
                         <div class="space-y-3">
                             <button onclick="nextStep(2, 'facial')" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all flex justify-between items-center group">
-                                <span>Rugas, Manchas ou Flacidez Facial</span>
+                                <span>Cicatrizes, Rugas, Manchas (Facial)</span>
                                 <i class="fas fa-chevron-right text-gray-300 group-hover:text-aura-pink-dark"></i>
                             </button>
                             <button onclick="nextStep(2, 'corporal')" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all flex justify-between items-center group">
-                                <span>Gordura Localizada ou Celulite</span>
+                                <span>Cicatrizes e Gordura (Corporal)</span>
                                 <i class="fas fa-chevron-right text-gray-300 group-hover:text-aura-pink-dark"></i>
                             </button>
                             <button onclick="nextStep(2, 'bemestar')" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all flex justify-between items-center group">
@@ -712,7 +777,6 @@
                             </button>
                         </div>
                     </div>
-
                     <div id="step-2" class="quiz-step hidden">
                         <h3 class="font-serif text-2xl text-aura-heading mb-2">Qual seu tipo de pele?</h3>
                         <p class="text-sm text-gray-500 mb-6">Isso nos ajuda a definir os produtos.</p>
@@ -722,7 +786,6 @@
                             <button onclick="nextStep(3)" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Não tenho certeza</button>
                         </div>
                     </div>
-
                     <div id="step-3" class="quiz-step hidden">
                         <h3 class="font-serif text-2xl text-aura-heading mb-2">Já realizou algum procedimento estético?</h3>
                         <p class="text-sm text-gray-500 mb-6">Queremos entender seu histórico.</p>
@@ -731,7 +794,6 @@
                             <button onclick="showResult()" class="w-full text-left p-4 rounded-xl border border-gray-100 hover:border-aura-pink-dark hover:bg-aura-pink/30 transition-all">Não, seria minha primeira vez.</button>
                         </div>
                     </div>
-
                     <div id="step-result" class="quiz-step hidden text-center">
                         <div class="w-20 h-20 bg-green-50 text-green-500 rounded-full flex items-center justify-center text-3xl mx-auto mb-6">
                             <i class="fas fa-wand-magic-sparkles"></i>
@@ -749,49 +811,37 @@
 
     <script>
         let userChoice = "";
-
         function openQuiz() {
             document.getElementById('quiz-modal').classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; // Trava o scroll do fundo
+            document.body.style.overflow = 'hidden';
         }
-
         function closeQuiz() {
             document.getElementById('quiz-modal').classList.add('hidden');
             document.body.style.overflow = 'auto';
         }
-
         function nextStep(step, choice = null) {
             if(choice) userChoice = choice;
-            
-            // Esconde todos
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
-            // Mostra o atual
             document.getElementById('step-' + step).classList.remove('hidden');
-            
-            // Atualiza progresso
             const progress = (step / 3) * 100;
             document.getElementById('quiz-progress').style.width = progress + '%';
         }
-
         function showResult() {
             document.querySelectorAll('.quiz-step').forEach(s => s.classList.add('hidden'));
             const resultStep = document.getElementById('step-result');
             const text = document.getElementById('result-text');
-            
             if(userChoice === 'facial') {
-                text.innerHTML = "O seu perfil indica que o **Combo Harmonização Glow** (Limpeza + Botox) trará os melhores resultados imediatos.";
+                text.innerHTML = "O seu perfil indica que o **Protocolo para Cicatriz de Acne** (Ativos e Enzimas) trará os melhores resultados para sua pele.";
             } else if(userChoice === 'corporal') {
-                text.innerHTML = "O seu perfil indica o **Protocolo Sculpt Aura**, focado em drenagem e quebra de gordura localizada.";
+                text.innerHTML = "O seu perfil indica o **Protocolo para Cicatrizes Corporais**, focado na regeneração das fibras dérmicas e contorno.";
             } else {
-                text.innerHTML = "O seu perfil indica um **Day Spa Terapêutico**, combinando massagem relaxante com aromaterapia.";
+                text.innerHTML = "O seu perfil indica um **Day Spa Terapêutico**, combinando massagem relaxante com aromaterapia e cuidado integral.";
             }
-
             resultStep.classList.remove('hidden');
             document.getElementById('quiz-progress').style.width = '100%';
         }
-
         function sendQuizToWhatsApp() {
-            const msg = "Olá Aura Concept! Acabei de fazer o quiz no site e meu resultado foi o perfil " + userChoice + ". Gostaria de saber mais sobre os protocolos indicados.";
+            const msg = "Olá Aura Concept! Acabei de fazer o quiz no site e meu resultado foi o perfil " + userChoice + ". Gostaria de agendar o meu protocolo.";
             const url = "https://wa.me/5511999999999?text=" + encodeURIComponent(msg);
             window.open(url, '_blank');
         }
